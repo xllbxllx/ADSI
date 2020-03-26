@@ -1,0 +1,85 @@
+body {
+  font: 16px Arial;
+}
+
+main {
+  margin: 20px auto;
+  width: 960px;
+}
+main .text-custom, main h1 {
+  color: #666;
+  text-shadow: 1px 1px 2px #fff, 2px 2px 4px #333;
+  text-transform: uppercase;
+}
+main h1 {
+  text-align: center;
+}
+main .box-custom, main section.slider {
+  border: 2px solid #fff;
+  border-radius: 4px;
+  box-shadow: 2px 2px 12px #000;
+}
+main section.slider {
+  height: 640px;
+  overflow: hidden;
+  position: relative;
+}
+main section.slider #slider1:target ~ div.sliders {
+  left: 0;
+}
+main section.slider #slider1:target ~ div.sliders ~ div.controls a:nth-child(1),
+main section.slider #slider2:target ~ div.sliders ~ div.controls a:nth-child(2),
+main section.slider #slider3:target ~ div.sliders ~ div.controls a:nth-child(3),
+main section.slider #slider4:target ~ div.sliders ~ div.controls a:nth-child(4),
+main section.slider #slider5:target ~ div.sliders ~ div.controls a:nth-child(5) {
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: scale(1.1);
+}
+main section.slider #slider2:target ~ div.sliders {
+  left: -960px;
+}
+main section.slider #slider3:target ~ div.sliders {
+  left: -1920px;
+}
+main section.slider #slider4:target ~ div.sliders {
+  left: -2880px;
+}
+main section.slider #slider5:target ~ div.sliders {
+  left: -3840px;
+}
+main section.slider div.sliders {
+  position: absolute;
+  transition: left 0.8s ease-in;
+  z-index: 1;
+  width: 4800px;
+}
+main section.slider div.sliders img {
+  float: left;
+  position: relative;
+  margin: 0px;
+  padding: 0px;
+}
+main section.slider div.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 44%;
+  z-index: 2;
+}
+main section.slider div.controls a {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: inline-block;
+  height: 20px;
+  text-decoration: none;
+  text-indent: -9999px;
+  transition: all 0.2s;
+  transform: scale(0.8);
+  width: 20px;
+}
+main section.slider div.controls a:hover {
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+}

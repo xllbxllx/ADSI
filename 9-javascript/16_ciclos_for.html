@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ciclos (for)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		ul {
+			list-style: none;
+			padding: 0px;
+			margin: 0px auto;
+			width: 40px;
+		}
+		li {
+			border: 1px dotted gray;
+			padding: 10px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Ciclos (for)</h1>
+		<p>
+			Imprimir los números pares desde el 1 hasta el 100.
+		</p>
+		<ul id="numbers"></ul>
+	</main>
+	<script>
+		// Variables
+		var numbers = document.getElementById('numbers');
+		// Ciclo For
+		for(var i=1; i <= 100; i++) {
+			if(i%2==0) {
+				numbers.innerHTML += "<li>"+i+"</li>";
+			}
+		}
+	</script>
+</body>
+</html>

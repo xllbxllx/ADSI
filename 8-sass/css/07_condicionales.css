@@ -1,0 +1,79 @@
+body {
+  background-color: #003145;
+  font: 16px Arial;
+}
+body h1 {
+  font-size: 3.6em;
+  background: linear-gradient(to top, #003145 30%, #54F400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 40px auto;
+  text-align: center;
+  width: 580px;
+}
+body a:link.btn,
+body a:visited.btn {
+  border: 1px solid #54F400;
+  border-radius: 4px;
+  color: #54F400;
+  display: block;
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  width: 120px;
+  margin: 80px auto;
+}
+body a:link.btn:hover,
+body a:visited.btn:hover {
+  transform: translateY(-10px) scale(1.1);
+}
+
+section.modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0px;
+  left: 0px;
+  opacity: 0;
+  position: fixed;
+  pointer-events: none;
+  right: 0px;
+  top: 0px;
+  transition: all 0.5s ease;
+  transform: translateY(-1000px);
+  z-index: 9999;
+}
+section.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0px);
+}
+section.modal > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  padding: 20px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-45%);
+  transform: translateX(-50%);
+  width: 400px;
+}
+section.modal > div h2 {
+  color: #d71f33;
+  position: relative;
+}
+section.modal > div h2:after {
+  content: "No Pueve Votar";
+}
+section.modal > div a:link,
+section.modal > div a:visited {
+  font-size: 2em;
+  display: block;
+  text-decoration: none;
+  color: #dc143c;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Texto (Espaciado: Letras y Palabras)</title>
+	<style>
+		article {
+			border: 2px solid #aaa;
+			display: inline-block;
+			padding: 5px;
+			vertical-align: top;
+			width: 250px;
+		}
+		article.el {
+			letter-spacing: 0.5em;
+		}
+		article.ep {
+			word-spacing: 2em;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Texto (Espaciado: Letras y Palabras)</h1>
+	<h3>Letras</h3>
+	<article>
+		<h4>Espaciado de Letras: normal</h4>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio autem, adipisci nemo, aut id qui. Eum delectus debitis, non fugiat, aut inventore obcaecati, sed alias numquam ex modi recusandae consequatur.
+		</p>
+	</article>
+	<!--  -->
+	<article class="el">
+		<h4>Espaciado de Letras: 0.5em</h4>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio autem, adipisci nemo, aut id qui. Eum delectus debitis, non fugiat, aut inventore obcaecati, sed alias numquam ex modi recusandae consequatur.
+		</p>
+	</article>
+	<!--  -->
+	<h3>Palabras</h3>
+	<article>
+		<h4>Espaciado de Palabras: normal</h4>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio autem, adipisci nemo, aut id qui. Eum delectus debitis, non fugiat, aut inventore obcaecati, sed alias numquam ex modi recusandae consequatur.
+		</p>
+	</article>
+	<!--  -->
+	<article class="ep">
+		<h4>Espaciado de Palabras: 2em</h4>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio autem, adipisci nemo, aut id qui. Eum delectus debitis, non fugiat, aut inventore obcaecati, sed alias numquam ex modi recusandae consequatur.
+		</p>
+	</article>
+</body>
+</html>

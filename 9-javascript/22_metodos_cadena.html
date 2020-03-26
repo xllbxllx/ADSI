@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos (Cadena)</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<main>
+		<h1>Métodos (Cadena)</h1>
+		<textarea id="string" cols="60" rows="4" placeholder="Ingresar Texto"></textarea>
+		<br>
+		<label for="toLower">
+			<input type="radio" id="toLower" value="tl" name="transf"> minúscula
+		</label>
+		<br>
+		<label for="toUpper">
+			<input type="radio" id="toUpper" value="tu" name="transf"> MAYÚSCULA
+		</label>
+		<br>
+		<input type="text" id="oword" placeholder="Origen">
+		por 
+		<input type="text" id="rword" placeholder="Reemplazo">
+		<br>
+		<input type="number" id="ni" placeholder="Pos Inicial">
+		hasta 
+		<input type="number" id="nf" placeholder="Pos Final">
+		<br><br>
+		<button id="btnAnalize"> Analizar Cadena </button>
+		<br><br>
+		<ul id="data"></ul>
+	</main>
+	<script>
+		// Variables
+		var string     = document.getElementById('string');
+		var toLower    = document.getElementById('toLower');
+		var toUpper    = document.getElementById('toUpper');
+		var btnAnalize = document.getElementById('btnAnalize');
+		var data       = document.getElementById('data');
+		var oword      = document.getElementById('oword');
+		var rword      = document.getElementById('rword');
+		var ni         = document.getElementById('ni');
+		var nf         = document.getElementById('nf');
+		var data       = document.getElementById('data');
+		var upper      = false;
+
+		// Envento
+		toLower.onchange = function() {
+			upper = false;
+		}
+		toUpper.onchange = function() {
+			upper = true;
+		}
+		btnAnalize.onclick = function() {
+			var tstring = string.value;
+			var toword  = oword.value;
+			var trword  = rword.value;
+			var tni     = parseInt(ni.value);
+			var tnf     = parseInt(nf.value);
+			if(upper) {
+				data.innerHTML = "<li>"+tstring.toUpperCase()+"</li>";
+			} else {
+				data.innerHTML = "<li>"+tstring.toLowerCase()+"</li>";
+			}
+			data.innerHTML += "<li> Longitud de Cadena: "+tstring.length+" caracteres</li>"
+			data.innerHTML += "<li> Cadena Reemplazo: "+tstring.replace(toword, trword)+"</li>";
+			data.innerHTML += "<li> Cadena Cortada: "+tstring.substring(tni, tnf)+"</li>";
+			
+		}
+
+
+
+	</script>
+</body>
+</html>

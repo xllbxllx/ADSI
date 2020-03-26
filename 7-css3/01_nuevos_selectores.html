@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Nuevos Selectores</title>
+	<style>
+		ul {
+			width: 400px;
+		}
+		ul li {
+			padding: 10px;
+			margin: 2px;
+		}
+		ul.nth li:nth-child(3) {
+			background-color: #dc1740;
+			color: #fff;
+		}
+		ul.nth li:nth-last-child(2) {
+			background-color: #3f8c50;
+			color: #fff;
+		}
+		ul.child li:first-child,
+		ul.child li:last-child {
+			background-color: #89397f;
+			color: #fff;
+		}
+		article {
+			padding: 20px;
+			width: 360px;
+		}
+		#inicio:target,
+		#portafolio:target,
+		#contacto:target {
+			background-color: #5676d2;
+			color: #fff;
+		}
+		article.amarillo p::selection  {
+			background-color: #ee0;
+		}
+		article.azul p::selection  {
+			background-color: #00a;
+		}
+		article.rojo p::selection  {
+			background-color: #a00;
+		}
+	</style>
+</head>
+<body>
+	<h1>Nuevos Selectores</h1>
+	<h3>:nth-child(n) | :nth-last-child(n)</h3>
+	<ul class="nth">
+		<li>Html</li>
+		<li>Css</li>
+		<li>Javascript</li>
+		<li>Python</li>
+		<li>Sql</li>
+	</ul>
+	<!--  -->
+	<h3>:first-child | :last-child</h3>
+	<ul class="child">
+		<li>C++</li>
+		<li>C#</li>
+		<li>Java</li>
+		<li>Ruby</li>
+		<li>Object Pascal</li>
+	</ul>
+	<!--  -->
+	<h3>:target</h3>
+	<ul class="target">
+		<li><a href="#inicio">Inicio</a></li>
+		<li><a href="#portafolio">Portafolio</a></li>
+		<li><a href="#contacto">Contacto</a></li>
+	</ul>
+	<article id="inicio">
+		<h2>Inicio</h2>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+	<article id="portafolio">
+		<h2>Portafolio</h2>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+	<article id="contacto">
+		<h2>Contacto</h2>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+	<!--  -->
+	<h3>::selection</h3>
+	<article class="amarillo">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+	<article class="azul">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+	<article class="rojo">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. A quas eligendi, at et ut id reprehenderit, debitis illo minima eos aut. Soluta praesentium temporibus nam est repudiandae, repellendus quod nobis.
+		</p>
+	</article>
+</body>
+</html>

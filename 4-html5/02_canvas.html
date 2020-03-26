@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas HTML5</title>
+</head>
+<body>
+	<h2>Cuadrado</h2>
+    <canvas id="cuadrado"></canvas>
+    <h2>Rectángulo</h2>
+    <canvas id="rectangulo"></canvas>
+    <h2>Triángulo</h2>
+    <canvas id="triangulo"></canvas>
+    <h2>Círculo</h2>
+    <canvas id="circulo"></canvas>
+    <h2>Corazón</h2>
+    <canvas id="corazon"></canvas>
+    <h2>Texto</h2>
+    <canvas id="texto"></canvas>
+
+	<script>
+		// Cuadrado --------------------------------------
+		var canvas   = document.getElementById('cuadrado');
+		var ctx      = canvas.getContext('2d');
+		ctx.fillStyle='#c00';
+		ctx.fillRect(0,0,100,100);
+		// Rectangulo --------------------------------------
+		var canvas   = document.getElementById('rectangulo');
+		var ctx      = canvas.getContext('2d');
+		ctx.fillStyle='#c00';
+		ctx.fillRect(0,0,200,100);
+		// Triangulo --------------------------------------
+		var canvas    = document.getElementById('triangulo');
+	    var ctx       = triangulo.getContext('2d');
+	    ctx.fillStyle = '#c00';
+	    ctx.beginPath();
+	    ctx.moveTo(10, 110);
+	    ctx.lineTo(110, 10);
+	    ctx.lineTo(210, 110);
+	    ctx.fill();
+	    // Circulo --------------------------------------
+	    var canvas    = document.getElementById('circulo');
+	    var ctx       = circulo.getContext('2d');
+	    ctx.fillStyle = '#c00';
+	    ctx.beginPath();
+	    ctx.arc(60, 60, 60, 0, Math.PI*2, true);
+	    ctx.closePath();
+	    ctx.fill();
+	    // Corazon --------------------------------------
+	    var canvas    = document.getElementById('corazon');
+        var ctx       = corazon.getContext('2d');
+        ctx.fillStyle = '#c00';
+        ctx.beginPath();
+        ctx.moveTo(75,40);
+        ctx.bezierCurveTo(75,37,70,25,50,25);
+        ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+        ctx.bezierCurveTo(20,80,40,102,75,120);
+        ctx.bezierCurveTo(110,102,130,80,130,62.5);
+        ctx.bezierCurveTo(130,62.5,130,25,100,25);
+        ctx.bezierCurveTo(85,25,75,37,75,40);
+        ctx.fill();
+	    // Texto --------------------------------------
+	    var canvas    = document.getElementById('texto');
+        var ctx       = texto.getContext('2d');
+        ctx.fillStyle = '#c00';
+        ctx.font = "60px Tahoma";
+        ctx.fillText("ADSI", 20, 80);
+	</script>
+</body>
+</html>

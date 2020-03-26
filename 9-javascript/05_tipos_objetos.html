@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Tipos de Objetos</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<main>
+		<h1>Tipos de Objetos</h1>
+		<ul id="objects"></ul>
+	</main>
+	
+	<script>
+		var obj = document.getElementById('objects');
+		var ob1 = new String;
+		var ob2 = new Number;
+		var ob3 = new Boolean;
+		var ob4 = new Array;
+		var ob5 = new Object;
+		var ob6 = new Date;
+
+		obj.innerHTML  = "<li>" + ob1.constructor.name + "</li>";
+		obj.innerHTML += "<li>" + ob2.constructor.name + "</li>";
+		obj.innerHTML += "<li>" + ob3.constructor.name + "</li>";
+		obj.innerHTML += "<li>" + ob4.constructor.name + "</li>";
+		obj.innerHTML += "<li>" + ob5.constructor.name + "</li>";
+		obj.innerHTML += "<li>" + ob6.constructor.name + "</li>";
+
+	</script>
+</body>
+</html>

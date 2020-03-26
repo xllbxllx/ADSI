@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Posicionamiento Relativo</title>
+	<style>
+		section.cajapadre {
+			border: 2px solid gray;
+			margin: 0px auto;
+			width: 400px;
+		} 
+		h4 {
+			text-align: center;
+		}
+		section.cajapadre div {
+			border: 2px solid silver;
+			margin: 5px;
+			padding: 20px;
+		}
+		section.cajapadre div.cajapeque {
+			display: inline-block; 
+			width: 76px;
+		}
+		div.cajamover {
+			background-color: white;
+			position: relative;
+			left: 80px;
+			top: 40px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Posicionamiento Relativo</h1>
+	<h4>Posicionamiento Normal</h4>
+	<section class="cajapadre">
+		<div class="cajapeque">Caja 1</div>
+		<div class="cajapeque">Caja 2</div>
+		<div class="cajapeque">Caja 3</div>
+		<div class="cajagrande">Caja 4</div>
+	</section>
+	<h4>Posicionamiento Relativo de la caja 2</h4>
+	<section class="cajapadre">
+		<div class="cajapeque">Caja 1</div>
+		<div class="cajapeque cajamover">Caja 2</div>
+		<div class="cajapeque">Caja 3</div>
+		<div class="cajagrande">Caja 4</div>
+	</section>
+</body>
+</html>

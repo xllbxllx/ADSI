@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Limpiar elementos flotantes</title>
+	<style>
+		h3 {
+			text-align: center;
+		}
+		section.cajapadre {
+			border: 2px solid gray;
+			margin: 0px auto;
+			padding: 20px;
+			width: 400px;
+		}
+		section.cajapadre p {
+			border: 2px solid silver;
+		}
+		section.cajapadre img {
+			float: left;
+		}
+		section.cajapadre p.limpiar {
+			clear: left;
+		}
+	</style>
+</head>
+<body>
+	<h1>Limpiar elementos flotantes</h1>
+	<h3>Posicionamiento float de la imagen</h3>
+	<section class="cajapadre">
+		<img src="imgs/hawk.png">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, cumque reprehenderit, sit praesentium eum saepe commodi! Ipsum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum ducimus voluptas eveniet ipsam fuga debitis nemo vel maiores excepturi rerum, quam dolore, quis illo temporibus doloribus sapiente sed nam.
+		</p>
+	</section>
+	<!--  -->
+	<h3>Párrafo "limpio" con clear: left</h3>
+	<section class="cajapadre">
+		<img src="imgs/hawk.png">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, cumque reprehenderit, sit praesentium eum saepe commodi! Ipsum.
+		</p>
+		<p class="limpiar">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatum ducimus voluptas eveniet ipsam fuga debitis nemo vel maiores excepturi rerum, quam dolore, quis illo temporibus doloribus sapiente sed nam.
+		</p>
+	</section>
+</body>
+</html>

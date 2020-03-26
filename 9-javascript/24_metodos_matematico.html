@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Métodos (Matemáticos)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<style>
+		button {
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			height: 100px;
+			width: 100px;
+		}
+		button#random {
+			background-color: #2f7046;
+			border: 2px solid #204930;
+			color: #fff;
+			font-size: 3em;
+		}
+		button#colors {
+			border: 2px solid #000;
+			background-color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Métodos (Matemáticos)</h1>
+		<h4>Aleatorio (1-100):</h4>
+		<button id="random"> 100 </button>
+		<h4>Aleatorio (Colores):</h4>
+		<button id="colors"> white </button>
+		<h4>Máximo/Mínimo (3,89,15,9,-45,56,23,-12)</h4>
+		<ul id="printm"></ul>
+		<h4>Redondear (Alta/Baja) 54.328:</h4>
+		<ul id="printr"></ul>
+		<h4>Potencia (2^3):</h4>
+		<ul id="printp"></ul>
+		<h4>Valor Absoluto (-23):</h4>
+		<ul id="printa"></ul>
+	</main>
+	<script>
+		// Variables
+		var random  = document.getElementById('random');
+		var colors  = document.getElementById('colors');
+		var printm  = document.getElementById('printm');
+		var printr  = document.getElementById('printr');
+		var printp  = document.getElementById('printp');
+		var printa  = document.getElementById('printa');
+		var lcolors = ['Aquamarine ','Beige ','LightBlue ','PeachPuff ','Violet '];
+		var nf      = 54.328;
+
+		// Evento
+		printm.innerHTML  = "<li>Máximo: "+Math.max(3,89,15,9,-45,56,23,-12)+"</li>";
+		printm.innerHTML += "<li>Mínimo: "+Math.min(3,89,15,9,-45,56,23,-12)+"</li>";
+		
+		printr.innerHTML = "<li>Alta: "+Math.ceil(nf)+"</li>";
+		printr.innerHTML += "<li>Baja: "+Math.floor(nf)+"</li>";
+		printr.innerHTML += "<li>Redondear: "+Math.round(nf)+"</li>";
+
+		printp.innerHTML = "<li>"+Math.pow(2,3)+"</li>";
+		printa.innerHTML = "<li>"+Math.abs(-23)+"</li>";
+
+		random.onclick = function() {
+			this.innerHTML = Math.round(Math.random()*100);
+		}
+		colors.onclick = function() {
+			var color = Math.round(Math.random()*4);
+			this.style.backgroundColor = lcolors[color];
+			this.innerHTML = lcolors[color];
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Selectores Avanzados CSS</title>
+	<style>
+		/* Hijos */
+		ol > li {
+			background-color: navy;
+			color: aqua;
+			margin: 10px;
+		}
+		/* Adyacente */
+		li + li {
+			background-color: black;
+		}
+		/* Atributo */
+		li[class] {
+			background-color: peru;
+		}
+	</style>
+</head>
+<body>
+	<h1>Selectores Avanzados CSS</h1>
+	<hr>
+	<ol>
+		<li>Hijos (ol > li)</li>
+		<li>Adyacentes ( li + li)</li>
+		<li class="color">Atributo (li[class])</li>
+	</ol>
+</body>
+</html>

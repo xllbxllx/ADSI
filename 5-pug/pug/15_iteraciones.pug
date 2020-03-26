@@ -1,0 +1,11 @@
+docytpe
+html(lang="es")
+	head
+		meta(charset="UTF-8")
+		title Iteraciones
+	body
+		h1 Iteraciones
+		ul
+			each val, index in ['yellow', 'blue', 'red', 'green', 'purple']
+				li(style='background-color:'+val)= index + ': ' + val
+	

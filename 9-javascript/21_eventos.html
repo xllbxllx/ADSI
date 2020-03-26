@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Eventos</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body onload="bienvenida();" id="bd">
+	<main>
+		<h1>Eventos</h1>
+		<h4>Doble Click</h4>
+		<button id="btnDC"> # de doble clicks = 0 </button>
+		<h4>Soltar Tecla</h4>
+		<input type="text" id="iname" placeholder="Ingresar Nombre Completo">
+		<output id="pname"></output>
+		<h4>Redimensionar Ventana</h4>
+		<output id="wbd"></output>
+		<h4>Cambiar Valor</h4>
+		<select id="bgcolor">
+			<option value="">Seleccione Color de Fondo...</option>
+			<option value="1">Naranja</option>
+			<option value="2">Rosado</option>
+			<option value="3">Amarillo</option>
+		</select>
+		<h4>mouse(OVER/OUT)</h4>
+		<img id="imgk" src="imgs/kny1.jpg"  width="280">
+	</main>
+	<script>
+		// Variables
+		var btnDC   = document.getElementById('btnDC');
+		var iname   = document.getElementById('iname');
+		var pname   = document.getElementById('pname');
+		var bd      = document.getElementById('bd');
+		var wbd     = document.getElementById('wbd');
+		var bgcolor = document.getElementById('bgcolor');
+		var imgk    = document.getElementById('imgk');
+
+		var cntDC   = 0;
+		// Eventos
+		btnDC.ondblclick = function() {
+			this.innerHTML = "# de doble clicks = "+cntDC++;
+		}
+		iname.onkeyup = function() {
+			pname.value = this.value;
+		}
+		bd.onresize = function() {
+			wbd.innerHTML = "Ancho ventana: "+window.outerWidth+" px";
+		}
+		bgcolor.onchange = function() {
+			if(this.value == '') {
+				bd.style.backgroundColor = "white";
+			}
+			if(this.value == '1') {
+				bd.style.backgroundColor = "orange";
+			}
+			if(this.value == '2') {
+				bd.style.backgroundColor = "pink";
+			}
+			if(this.value == '3') {
+				bd.style.backgroundColor = "yellow";
+			}
+		}
+		imgk.onmouseover = function() {
+			this.src = "imgs/kny2.jpg";
+			//this.setAttribute("src", "imgs/kny2.jpg");
+		}
+		imgk.onmouseout = function() {
+			this.src = "imgs/kny1.jpg";
+			//this.setAttribute("src", "imgs/kny1.jpg");
+
+		}
+		// Funciones
+		function bienvenida() {
+			alert("Bienvenidos:\nLa página a cargado con exito!");
+		}
+	</script>
+</body>
+</html>

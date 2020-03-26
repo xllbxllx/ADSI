@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Media Queries</title>
+	<style>
+		* {
+			transition: all 0.5s;
+		}
+		body {
+			background-color: #013571;
+			font: 16px Tahoma;
+		}
+		section.main {
+			border: 10px solid #0177db;
+			color: rgba(255, 255, 255, .6);
+			margin: 20px auto;
+			padding: 14px;
+			width: 960px;
+		}
+		section.main div.logo {
+			background: url(imgs/pepsi01.png) no-repeat center;
+			background-size: contain;
+			margin: 0px auto;
+			height: 300px;
+			width: 780px;
+		}
+		section.main h1 span.r2,
+		section.main h1 span.r3 {
+			display: none;
+		}
+		@media (max-width: 1024px) {
+			section.main {
+				width: 640px;
+			}
+			section.main h1 span.r1,
+			section.main h1 span.r3 {
+				display: none;
+			}
+			section.main h1 span.r2 {
+				display: inline;
+			}
+			section.main div.logo {
+				background: url(imgs/pepsi02.png) no-repeat center;
+				height: 340px;
+				width: 340px;
+			}
+		}
+		@media (max-width: 720px) {
+			section.main {
+				width: 440px;
+			}
+			section.main h1 span.r1,
+			section.main h1 span.r2 {
+				display: none;
+			}
+			section.main h1 span.r3 {
+				display: inline;
+			}
+			section.main div.logo {
+				background: url(imgs/pepsi03.png) no-repeat center;
+				height: 340px;
+				width: 340px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<section class="main">
+		<div class="logo"></div>
+		<h1>
+			Media Queries 
+			<span class="r1">( 1024px )</span>
+			<span class="r2">( 720px )</span>
+			<span class="r3">( 440px )</span>
+		</h1>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore iure illo omnis, provident, placeat quia tempora deserunt blanditiis! Error maxime quia sed, fugiat? Nulla laborum, assumenda perspiciatis quisquam accusantium, qui facilis repudiandae suscipit aut veritatis doloribus ea, labore esse in minus illum delectus velit provident. A, beatae placeat. Libero quibusdam dicta velit quaerat assumenda odit magnam earum repellat delectus. Eveniet, quisquam voluptates doloribus, atque suscipit odit officiis a, perferendis esse ad dignissimos sint assumenda doloremque totam inventore beatae. Corrupti nobis, ipsam odit vel quam reiciendis quos. Ipsa inventore delectus laboriosam praesentium, reiciendis quo repellendus modi maxime blanditiis? Quas, mollitia tenetur sed, repellat iure voluptas vero officia. Voluptatem necessitatibus nam itaque sint accusamus, earum sed neque reiciendis atque quis quidem, blanditiis eaque id doloribus. Aut consectetur harum cumque cupiditate excepturi maxime placeat temporibus laudantium adipisci alias exercitationem dicta impedit, autem enim recusandae pariatur ab quaerat porro tempore, doloremque laborum dolorem quia. Sunt eligendi quasi nostrum odio quae sapiente, iste iure enim optio et officiis cupiditate odit. Reiciendis praesentium aliquid dolor dolores, nesciunt aspernatur ullam, consequuntur culpa odit architecto, consectetur soluta doloremque recusandae placeat quasi perferendis illum adipisci autem eaque beatae, velit libero fuga enim doloribus? Consectetur incidunt eveniet quisquam, perspiciatis sit?
+		</p>
+	</section>
+</body>
+</html>

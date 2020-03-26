@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reto (Vectores)</title>
+	<style>
+		h1, h2 {
+			font: 1.4em Verdana;
+			color: #4e6b64;
+			margin-top: 20px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		main.vectors {
+			background: url(imgs/vectors/bg.png) no-repeat center;
+			height: 480px;
+			margin: 20px auto;
+			position: relative;
+			width: 480px;
+		}
+		ul.pokemons {
+			height: 152px;
+			list-style: none;
+			margin: 0px;
+			position: absolute;
+			padding: 0px;
+			top: 90px; left: 80px;
+			width: 314px;
+		}
+		ul.pokemons li.pk {
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			border-radius: 30px;
+			display: inline-block;
+			filter: grayscale(1);
+			height: 60px;
+			margin: 6px;
+			transition: all 0.5s ease-out;
+			width: 60px;
+		}
+		ul.pokemons li.pk1, 
+		nav ul#showArray li.pk1 { 
+			background-image: url(imgs/vectors/pk1.png); 
+		}
+		ul.pokemons li.pk2,
+		nav ul#showArray li.pk2 { 
+			background-image: url(imgs/vectors/pk2.png); 
+		}
+		ul.pokemons li.pk3, 
+		nav ul#showArray li.pk3 { 
+			background-image: url(imgs/vectors/pk3.png); 
+		}
+		ul.pokemons li.pk4, 
+		nav ul#showArray li.pk4 { 
+			background-image: url(imgs/vectors/pk4.png); 
+		}
+		ul.pokemons li.pk5, 
+		nav ul#showArray li.pk5 { 
+			background-image: url(imgs/vectors/pk5.png); 
+		}
+		ul.pokemons li.pk6, 
+		nav ul#showArray li.pk6 { 
+			background-image: url(imgs/vectors/pk6.png); 
+		}
+		ul.pokemons li.pk7, 
+		nav ul#showArray li.pk7 { 
+			background-image: url(imgs/vectors/pk7.png); 
+		}
+		ul.pokemons li.pk8, 
+		nav ul#showArray li.pk8 { 
+			background-image: url(imgs/vectors/pk8.png); 
+		}
+
+		ul.pokemons li.pk:hover,
+		ul.pokemons li.pk.active {
+			cursor: pointer;
+			filter: grayscale(0);
+			transform: scale(1.2);
+		}
+
+		select#pokePos {
+			-webkit-appearance: none;
+			border: none;
+			background: url(imgs/vectors/select.png) no-repeat center;
+			height: 36px;
+			position: absolute;
+			outline: none;
+			text-indent: 20px;
+			bottom: 90px; left: 40px;
+			width: 400px;
+		}
+		
+		section.btns {
+			position: absolute;
+			bottom: 20px; left: 40px;
+		}
+		section.btns button {
+			background-color: transparent;
+			background-position: center;
+			background-repeat: no-repeat;
+			border: none;
+			height: 36px;
+			opacity: .8;
+			transition: all 0.5s ease-in;
+			width: 180px;
+		}
+		section.btns button#btnAdd { 
+			background-image: url(imgs/vectors/btnAdd.png);
+			margin-right: 30px;
+		 }
+		 section.btns button#btnDelete { 
+			background-image: url(imgs/vectors/btnDelete.png);
+		 }
+		 section.btns button:hover {
+		 	cursor: pointer;
+		 	opacity: 1;
+		 	transform: scale(1.05);
+		 }
+		 /* nav ul#showArray */
+		 nav ul#showArray {
+		 	list-style: none;
+		 	margin: 0px auto;
+		 	padding: 0px;
+		 	width: 440px;
+		 }
+		 nav ul#showArray li {
+		 	background-position: center;
+		 	background-repeat: no-repeat;
+			border-radius: 30px;
+			display: inline-block;
+			height: 60px;
+			margin: 4px;
+			position: relative;
+			vertical-align: top;
+			width: 60px;
+		}
+		nav ul#showArray li span {
+			background-color: rgba(255,255,255,.8);
+			border-radius: 10px;
+			display: block;
+			font: 0.8em Arial;
+			line-height: 1em;
+			text-align: center;
+			height: 10px;
+			padding: 4px 8px;
+			position: absolute;
+			top: 6px; left: 16px;
+			width: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Reto (Vectores)</h1>
+	<main class="vectors">
+		<ul class="pokemons">
+			<li class="pk pk1" id="pk1"></li>
+			<li class="pk pk2" id="pk2"></li>
+			<li class="pk pk3" id="pk3"></li>
+			<li class="pk pk4" id="pk4"></li>
+			<li class="pk pk5" id="pk5"></li>
+			<li class="pk pk6" id="pk6"></li>
+			<li class="pk pk7" id="pk7"></li>
+			<li class="pk pk8" id="pk8"></li>
+		</ul>
+		<select id="pokePos">
+			<option value="">Seleccione...</option>
+			<option value="1">Inicio</option>
+			<option value="2">Final</option>
+		</select>
+		<section class="btns">
+			<button id="btnAdd"></button>
+			<button id="btnDelete"></button>
+		</section>
+	</main>
+	<h2>Lista:</h2>
+	<nav>
+		<ul id="showArray">
+		</ul>
+	</nav>
+	<script>
+		// Variables
+		var pks        = document.getElementsByTagName('li');
+		var showArray  = document.getElementById('showArray');
+		var btnAdd     = document.getElementById('btnAdd');
+		var btnDelete  = document.getElementById('btnDelete');
+		var pokeArray  = new Array();
+		var pokeAct    = null;
+		var pokePos    = null;
+
+
+		for (var i=0; i < pks.length; i++) {
+			pks[i].onclick = function() {
+				removeActive();
+				this.classList.add('active');
+				pokeAct = this.getAttribute('id');
+			}
+		}
+		// Funciones
+		function removeActive() {
+			for (var i=0; i < pks.length; i++) {
+				pks[i].classList.remove('active');
+			}
+		}
+		function validateInputs() {
+			pokePos = document.getElementById('pokePos').value;
+			if(pokeAct != null && pokePos.length > 0) {
+				return true;
+			} else{
+				alert('Por favor debe seleccionar un pokemon y una posición!');
+			}
+		}
+		function renderArray() {
+			showArray.innerHTML = ""; 
+			for (var i = 0; i < pokeArray.length; i++) {
+				showArray.innerHTML += "<li class='"+pokeArray[i]+"'><span>"+i+"</span></li>";
+			}
+		}
+		btnAdd.onclick = function() {
+			if(validateInputs()) {
+				if(pokePos == 1) {
+					pokeArray.unshift(pokeAct);
+				}
+				if(pokePos == 2) {
+					pokeArray.push(pokeAct);
+				}
+				renderArray();
+			}
+		}
+		btnDelete.onclick = function() {
+			if(validateInputs()) {
+				if(pokePos == 1) {
+					pokeArray.shift();
+				}
+				if(pokePos == 2) {
+					pokeArray.pop();
+				}
+				renderArray();
+			}
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+body {
+	font: 16px Tahoma;
+	margin: 0px;
+	padding: 0px;
+
+	h1 {
+		text-align: center;
+	}
+}
+main {
+	ul.colors {
+		list-style: none;
+		margin: 100px auto;
+		padding: 0px;
+		width: 1066px;
+		li {
+			border: thin solid rgba(0,0,0,.2);
+			display: inline-block;
+			margin: 0px;
+			height: 400px;
+			transition: all 0.5s ease;
+			width: 100px;
+			// - - - - - - - - - - - - - - - - - 
+			/* Ciclos */
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					background-color: rgb(255, 20*$i, 0);
+				}
+				&:hover:nth-child(#{$i}) {
+					cursor: pointer;
+					background-color: rgb(255, 200-20*$i, 0);
+					transform: scale(1.1);
+				}
+			}
+			// - - - - - - - - - - - - - - - - - 
+		}
+	}
+}

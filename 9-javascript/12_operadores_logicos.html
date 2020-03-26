@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Operadores (Lógicos)</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/tables.css">
+</head>
+<body>
+	<main>
+		<h1>Operadores (Lógicos)</h1>
+		<table>
+			<thead>
+				<tr>
+					<th colspan="4">
+						<input id="vx" type="number" placeholder="Valor de x">
+						<input id="vy" type="number" placeholder="Valor de y">
+					</th>
+				</tr>
+				<tr>
+					<th>Operador</th>
+					<th>Descripción</th>
+					<th>Ejemplo</th>
+					<th>Resultado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>&&</td>
+					<td>Y</td>
+					<td>(x<10 && y>1)</td>
+					<td id="vb1"></td>
+				</tr>
+				<tr>
+					<td>||</td>
+					<td>O</td>
+					<td>(x==5 || y==5)</td>
+					<td id="vb2"></td>
+				</tr>
+				<tr>
+					<td>!</td>
+					<td>No</td>
+					<td>!(x==y)</td>
+					<td id="vb3"></td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+	<script>
+		// Variables
+		var vx  = document.getElementById('vx');
+		var vy  = document.getElementById('vy');
+
+		var vb1  = document.getElementById('vb1');
+		var vb2  = document.getElementById('vb2');
+		var vb3  = document.getElementById('vb3');
+
+		// Función
+		function calcValues(x, y) {
+			x  = parseInt(x);
+			y  = parseInt(y);
+			// - - - - - - - - - - - - - - - -
+			vb1.innerHTML = (x<10 && y>1); 
+			// - - - - - - - - - - - - - - - -
+			vb2.innerHTML = (x==5 || y==5); 
+			// - - - - - - - - - - - - - - - -
+			vb3.innerHTML = !(x==y); 
+		}
+
+		// Evento
+		vx.onkeyup = function() {
+			valy = vy.value;
+			valx = this.value;
+			if(valx.length > 0 && valx.length < 12) {
+				calcValues(valx, valy);
+			}
+		}
+		vy.onkeyup = function() {
+			valy = this.value;
+			valx = vx.value;
+			if(valy.length > 0 && valy.length < 12) {
+				calcValues(valx, valy);
+			}
+		}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+body {
+  background-color: #dc143c;
+  color: #ddd;
+  font-family: Arial;
+}
+
+section {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 20px auto;
+  padding: 40px;
+  width: 400px;
+}
+section article {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  padding: 10px;
+}
+section article h1:after {
+  background: linear-gradient(to right, #00a63d, #dc143c);
+  content: "";
+  height: 10px;
+  display: block;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) skew(-50deg);
+  top: calc(100% + 10px);
+  width: 80%;
+}
+section article h1 {
+  font-size: 2.4em;
+  position: relative;
+  text-align: center;
+}
+section article h1:before {
+  background: linear-gradient(to right, #dc143c, #00a63d);
+  content: "";
+  height: 10px;
+  display: block;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%) skew(-50deg);
+  top: calc(-100% + 20px);
+  width: 80%;
+}
+section article p {
+  text-align: justify;
+  line-height: 1.6em;
+}
